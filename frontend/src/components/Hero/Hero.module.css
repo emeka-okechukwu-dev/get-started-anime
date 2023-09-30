@@ -59,9 +59,8 @@
   }
 }
 
-
 /* Create Account Styling */
-.createAccountContainer p{
+.createAccountContainer p {
   margin-top: 16px;
   margin-bottom: 1rem;
 }
@@ -104,7 +103,9 @@
   padding: 1.25rem 1rem;
   padding-bottom: 0.25rem;
   position: relative;
-  font-family: Netflix Sans, sans-serif;
+  font-family:
+    Netflix Sans,
+    sans-serif;
   flex-grow: 1;
   min-height: 3.2rem;
   cursor: text;
@@ -127,7 +128,9 @@ label.activeLabel {
 .emailInputContainer input {
   width: 100%;
   font-size: 1rem;
-  font-family: Netflix Sans, sans-serif;
+  font-family:
+    Netflix Sans,
+    sans-serif;
 }
 
 @media (min-width: 600px) {

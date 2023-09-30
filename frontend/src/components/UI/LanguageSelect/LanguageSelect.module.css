@@ -1,5 +1,7 @@
 .selectContainer .select {
-  font-family: Netflix Sans, sans-serif;
+  font-family:
+    Netflix Sans,
+    sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   min-width: auto;
@@ -18,18 +20,18 @@
   height: 1px;
 }
 
-.selectContainer svg[data-name="Globe"],
-.selectContainer svg[data-name="CaretDown"] {
+.selectContainer svg[data-name='Globe'],
+.selectContainer svg[data-name='CaretDown'] {
   position: absolute;
   pointer-events: none;
   top: 7px;
 }
 
-.selectContainer svg[data-name="Globe"] {
+.selectContainer svg[data-name='Globe'] {
   left: 0.6rem;
 }
 
-.selectContainer svg[data-name="CaretDown"] {
+.selectContainer svg[data-name='CaretDown'] {
   right: 0.75rem;
   top: 8px;
 }

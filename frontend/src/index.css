@@ -13,7 +13,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
-  font-family: Netflix Sans, sans-serif;
+  font-family:
+    Netflix Sans,
+    sans-serif;
   scroll-behavior: smooth;
 }
 

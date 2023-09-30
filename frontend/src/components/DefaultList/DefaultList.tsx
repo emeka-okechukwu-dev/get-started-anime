@@ -1,55 +1,55 @@
-import React, { useEffect, useState } from "react";
-import Grid from '@mui/material/Grid';
-import { movieList } from "./MyAnimeList";
+import Grid from '@mui/material/Grid'
+import React, { useEffect, useState } from 'react'
+import { movieList } from './MyAnimeList'
 
 interface MovieItem {
-  id: number;
-  title: string;
-  backdrop: string;
-  url: string;
+  id: number
+  title: string
+  backdrop: string
+  url: string
 }
 
 const Movie: React.FC<{ movie: MovieItem }> = ({ movie }) => {
-  const [img, setImg] = useState<HTMLImageElement | null>(null);
+  const [img, setImg] = useState<HTMLImageElement | null>(null)
 
   useEffect(() => {
     if (movie.backdrop) {
-      const image = new Image();
-      image.src = movie.backdrop;
+      const image = new Image()
+      image.src = movie.backdrop
       image.onload = () => {
         setTimeout(() => {
-          setImg(image);
-        }, 300);
-      };
+          setImg(image)
+        }, 300)
+      }
       return () => {
         // When the component unmounts
-        image.onload = null;
-      };
+        image.onload = null
+      }
     }
-  }, [movie.backdrop]);
+  }, [movie.backdrop])
 
   return (
     <Grid item xs={12} sm={6} md={3}>
-      <div className="movie">
+      <div className='movie'>
         {!img ? (
           <>
-            <div className="movie__img--skeleton"></div>
-            <div className="skeleton movie__title--skeleton"></div>
+            <div className='movie__img--skeleton'></div>
+            <div className='skeleton movie__title--skeleton'></div>
           </>
         ) : (
           <>
-            <a href={movie.url} target="_blank" rel="noopener noreferrer">
-              <figure className="movie__img--wrapper">
-                <img className="movie__img" src={img.src} alt="" />
+            <a href={movie.url} target='_blank' rel='noopener noreferrer'>
+              <figure className='movie__img--wrapper'>
+                <img className='movie__img' src={img.src} alt='' />
               </figure>
             </a>
-            <div style={{ color: 'white' }} className="movie__title">
+            <div style={{ color: 'white' }} className='movie__title'>
               <a
                 style={{ color: 'white' }}
                 href={movie.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="movie__title--link"
+                target='_blank'
+                rel='noopener noreferrer'
+                className='movie__title--link'
               >
                 {movie.title}
               </a>
@@ -58,20 +58,19 @@ const Movie: React.FC<{ movie: MovieItem }> = ({ movie }) => {
         )}
       </div>
     </Grid>
-  );
-};
+  )
+}
 
 const DefaultList: React.FC = () => {
-
   return (
     <div>
-      <div id="movies__body">
-        <main id="movies__main">
+      <div id='movies__body'>
+        <main id='movies__main'>
           <section>
-            <div className="movies__container">
-              <div className="row">
-                <div className="movies__header">
-                  <h2 className="section__title movies__header--title">
+            <div className='movies__container'>
+              <div className='row'>
+                <div className='movies__header'>
+                  <h2 className='section__title movies__header--title'>
                     Emeka's Favs
                   </h2>
                 </div>
@@ -86,7 +85,7 @@ const DefaultList: React.FC = () => {
         </main>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DefaultList;
+export default DefaultList

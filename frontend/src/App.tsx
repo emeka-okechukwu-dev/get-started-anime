@@ -1,23 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
-import Hero from "./components/Hero/Hero";
-import RecommendationList from "./components/RecommendationsList/RecommendationsList";
-import DefaultList from "./components/DefaultList/DefaultList";
-import Footer from "./components/Footer/Footer";
-import "./App.css"; // If you have CSS styles
+import React, { useEffect, useRef, useState } from 'react'
+import './App.css'
+import DefaultList from './components/DefaultList/DefaultList'
+import Footer from './components/Footer/Footer'
+import Hero from './components/Hero/Hero'
+import RecommendationList from './components/RecommendationsList/RecommendationsList'
+
+// If you have CSS styles
 
 function App() {
-  const [recommendations, setRecommendations] = useState<any[]>([]);
-  const recommendationsRef = useRef<HTMLDivElement | null>(null);
+  const [recommendations, setRecommendations] = useState<any[]>([])
+  const recommendationsRef = useRef<HTMLDivElement | null>(null)
 
   const handleRecommendationsUpdate = (updatedInput: any) => {
-    setRecommendations(updatedInput);
-  };
+    setRecommendations(updatedInput)
+  }
 
   useEffect(() => {
     if (recommendationsRef.current) {
-      recommendationsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      recommendationsRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
     }
-  }, [recommendations]);
+  }, [recommendations])
 
   return (
     <>
@@ -34,7 +39,7 @@ function App() {
         <Footer />
       </footer>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
